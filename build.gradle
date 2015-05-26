@@ -1,0 +1,53 @@
+buildscript {
+  ext.kotlin_version = '0.1-SNAPSHOT'
+  repositories {
+    jcenter()
+    maven {
+      url 'http://oss.sonatype.org/content/repositories/snapshots'
+    }
+  }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  }
+}
+
+plugins {
+  id 'java'
+  id 'application'
+  id "com.github.johnrengelman.shadow" version "1.2.1"
+}
+
+apply plugin: 'kotlin'
+
+project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
+project.ext.targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+  jcenter()
+  maven {
+    url "https://oss.sonatype.org/content/repositories/snapshots"
+  }
+}
+
+mainClassName = "griffio.GriffioPackage"
+
+dependencies {
+
+  compile(
+      "com.google.dagger:dagger:2.0",
+      "org.jetbrains.kotlin:kotlin-stdlib:0.1-SNAPSHOT",
+      "com.google.guava:guava:18.0")
+
+  kapt(
+      "com.google.dagger:dagger-compiler:2.0")
+
+  testCompile(
+      "junit:junit:4.12",
+      "com.google.truth:truth:1.0-SNAPSHOT"
+  )
+
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.4'
+}
