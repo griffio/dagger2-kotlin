@@ -16,8 +16,10 @@ Kotlin and Java exists side by side. The Dagger generated code must be configure
 Shows Planets being injected via constructor by qualifier
 
 ~~~
-public class TerrestrialPlanets [Inject] (Named("Mercury") val mercury: Planet, Named("Venus") val venus: Planet,
-                                          Named("Earth") val earth: Planet, Named("Mars") val mars: Planet) {
+public class TerrestrialPlanets [Inject] (Named("Mercury") val mercury: Planet,
+                                          Named("Venus") val venus: Planet,
+                                          Named("Earth") val earth: Planet,
+                                          Named("Mars") val mars: Planet) {
 }
 ~~~
 
