@@ -5,6 +5,15 @@ dagger2-example with Kotlin annotation processor support Gradle build
 
 Kotlin and Java exists side by side. The Dagger generated code must be configured in Java.
 
+~~~java
+ public SolarSystem solarSystem() {
+    return DaggerSolarSystem.builder()
+        .terrestrialPlanetsModule(new TerrestrialPlanetsModule())
+        .outerPlanetsModule(new OuterPlanetsModule())
+        .build();
+  }
+~~~
+
 [Dagger2 site ](http://google.github.io/dagger/)
 
 ---
