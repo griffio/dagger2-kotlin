@@ -33,12 +33,19 @@ mainClassName = "griffio.GriffioPackage"
 
 dependencies {
 
+  ext.querydsl_version = "4.0.0"
+  ext.jpa_version = "2.1.0"
+
   compile(
       "com.google.dagger:dagger:2.0",
+      "com.querydsl:querydsl-collections:${querydsl_version}",
+      "com.querydsl:querydsl-jpa:${querydsl_version}",
+      "org.eclipse.persistence:javax.persistence:${jpa_version}",
       "org.jetbrains.kotlin:kotlin-stdlib:0.1-SNAPSHOT",
       "com.google.guava:guava:18.0")
 
   kapt(
+      "com.querydsl:querydsl-apt:${querydsl_version}:jpa",
       "com.google.dagger:dagger-compiler:2.0")
 
   testCompile(
