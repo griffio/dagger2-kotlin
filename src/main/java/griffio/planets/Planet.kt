@@ -1,6 +1,6 @@
 package griffio.planets;
 
-public trait Planet {
+public interface Planet {
 
     fun names() : String
 

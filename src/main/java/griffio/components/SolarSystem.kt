@@ -10,7 +10,7 @@ import javax.inject.Singleton
 
 Singleton
 Component(modules = arrayOf(TerrestrialPlanetsModule::class, OuterPlanetsModule::class))
-public trait SolarSystem {
+public interface SolarSystem {
     public fun terrestrial() : TerrestrialPlanets
     public fun outer() : OuterPlanets
 }

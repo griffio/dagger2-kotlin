@@ -1,13 +1,11 @@
+
 buildscript {
-  ext.kotlin_version = '0.1-SNAPSHOT'
+  ext.kotlin_version = '0.12.200'
   repositories {
     jcenter()
-    maven {
-      url 'http://oss.sonatype.org/content/repositories/snapshots'
-    }
   }
   dependencies {
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
   }
 }
 
@@ -19,8 +17,8 @@ plugins {
 
 apply plugin: 'kotlin'
 
-project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
-project.ext.targetCompatibility = JavaVersion.VERSION_1_8
+project.ext.sourceCompatibility = "1.8"
+project.ext.targetCompatibility = "1.8"
 
 repositories {
   jcenter()
@@ -29,28 +27,33 @@ repositories {
   }
 }
 
-mainClassName = "griffio.GriffioPackage"
+project.mainClassName = "griffio.GriffioPackage"
 
-dependencies {
+project.dependencies {
 
-  ext.querydsl_version = "4.0.0"
+  ext.dagger_version = "2.0"
+  ext.guava_version = "18.0"
   ext.jpa_version = "2.1.0"
+  ext.junit_version = "4.12"
+  ext.kotlin_version = "0.12.200"
+  ext.querydsl_version = "4.0.0"
+  ext.truth_version = "1.0-SNAPSHOT"
 
   compile(
-      "com.google.dagger:dagger:2.0",
+      "com.google.dagger:dagger:${dagger_version}",
       "com.querydsl:querydsl-collections:${querydsl_version}",
       "com.querydsl:querydsl-jpa:${querydsl_version}",
       "org.eclipse.persistence:javax.persistence:${jpa_version}",
-      "org.jetbrains.kotlin:kotlin-stdlib:0.1-SNAPSHOT",
-      "com.google.guava:guava:18.0")
+      "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+      "com.google.guava:guava:${guava_version}")
 
   kapt(
       "com.querydsl:querydsl-apt:${querydsl_version}:jpa",
-      "com.google.dagger:dagger-compiler:2.0")
+      "com.google.dagger:dagger-compiler:${dagger_version}")
 
   testCompile(
-      "junit:junit:4.12",
-      "com.google.truth:truth:1.0-SNAPSHOT"
+      "junit:junit:${junit_version}",
+      "com.google.truth:truth:${truth_version}"
   )
 
 }
