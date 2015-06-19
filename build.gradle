@@ -22,22 +22,19 @@ project.ext.targetCompatibility = "1.8"
 
 repositories {
   jcenter()
-  maven {
-    url "https://oss.sonatype.org/content/repositories/snapshots"
-  }
 }
 
 project.mainClassName = "griffio.GriffioPackage"
 
 project.dependencies {
 
-  ext.dagger_version = "2.0"
+  ext.dagger_version = "2.0.1"
   ext.guava_version = "18.0"
   ext.jpa_version = "2.1.0"
   ext.junit_version = "4.12"
   ext.kotlin_version = "0.12.200"
-  ext.querydsl_version = "4.0.0"
-  ext.truth_version = "1.0-SNAPSHOT"
+  ext.querydsl_version = "4.0.1"
+  ext.truth_version = "0.27"
 
   compile(
       "com.google.dagger:dagger:${dagger_version}",
