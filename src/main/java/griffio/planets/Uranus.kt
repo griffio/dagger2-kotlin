@@ -9,5 +9,4 @@ public class Uranus : Planet {
     override fun au(): Double {
         return 19.2
     }
-
 }

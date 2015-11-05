@@ -1,12 +1,10 @@
-package griffio.planets;
+package griffio.planets
 
 public interface Planet {
 
-    fun names() : String
+    fun names(): String
 
-    fun au() : Double
+    fun au(): Double
 
-    override fun toString(): String {
-        return "${names()} is ${au()} au"
-    }
+    fun asString(): String = "${names()} is ${au()} au"
 }

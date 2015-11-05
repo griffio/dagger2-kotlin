@@ -9,5 +9,4 @@ public final class Venus : Planet {
     override fun au(): Double {
         return 0.7
     }
-
 }

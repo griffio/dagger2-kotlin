@@ -1,15 +1,14 @@
-package griffio.components;
+package griffio.components
 
-import dagger.Component;
-import griffio.modules.OuterPlanetsModule;
-import griffio.modules.TerrestrialPlanetsModule;
-import griffio.planets.OuterPlanets;
-import griffio.planets.TerrestrialPlanets;
-
+import dagger.Component
+import griffio.modules.OuterPlanetsModule
+import griffio.modules.TerrestrialPlanetsModule
+import griffio.planets.OuterPlanets
+import griffio.planets.TerrestrialPlanets
 import javax.inject.Singleton
 
-Singleton
-Component(modules = arrayOf(TerrestrialPlanetsModule::class, OuterPlanetsModule::class))
+@Singleton
+@Component(modules = arrayOf(TerrestrialPlanetsModule::class, OuterPlanetsModule::class))
 public interface SolarSystem {
     public fun terrestrial() : TerrestrialPlanets
     public fun outer() : OuterPlanets

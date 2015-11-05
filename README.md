@@ -1,7 +1,9 @@
-dagger2-example with Kotlin (M12) annotation processor support Gradle build
+dagger2-example with Kotlin (1.0.0-beta-1038) annotation processor support Gradle build
 =================================
 
 [kapt-annotation-processing-for-kotlin](http://blog.jetbrains.com/kotlin/2015/05/kapt-annotation-processing-for-kotlin)
+
+[better-annotation-processing-supporting-stubs-in-kapt](http://blog.jetbrains.com/kotlin/2015/06/better-annotation-processing-supporting-stubs-in-kapt)
 
 Kotlin and Java exists side by side. The Dagger generated code must be configured in Java.
 
@@ -25,35 +27,35 @@ Kotlin and Java exists side by side. The Dagger generated code must be configure
 Shows Planets being injected via constructor by qualifier
 
 ~~~
-public class TerrestrialPlanets [Inject] (Named("Mercury") val mercury: Planet,
-                                          Named("Venus") val venus: Planet,
-                                          Named("Earth") val earth: Planet,
-                                          Named("Mars") val mars: Planet) {
+public class TerrestrialPlanets @Inject (@Named("Mercury") val mercury: Planet,
+                                         @Named("Venus") val venus: Planet,
+                                         @Named("Earth") val earth: Planet,
+                                         @Named("Mars") val mars: Planet) {
 }
 ~~~
 
 The TerrestrialPlanetsModule, for example, provides a singleton named "Mercury" etc.
 
 ~~~
-Module
+@Module
 public class TerrestrialPlanetsModule {
 
-    Provides Singleton Named("Mercury")
+    @Provides @Singleton @Named("Mercury")
     public fun first() : Planet {
         return Mercury()
     }
 
-    Provides Singleton Named("Venus")
+    @Provides @Singleton @Named("Venus")
     public fun second() : Planet {
         return Venus()
     }
 
-    Provides Singleton Named("Earth")
+    @Provides @Singleton @Named("Earth")
     public fun third() : Planet {
         return Earth()
     }
 
-    Provides Singleton Named("Mars")
+    @Provides @Singleton @Named("Mars")
     public fun fourth() : Planet {
         return Mars()
     }

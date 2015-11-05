@@ -1,6 +1,6 @@
 
 buildscript {
-  ext.kotlin_version = '0.12.200'
+  ext.kotlin_version = '1.0.0-beta-1038'
   repositories {
     jcenter()
   }
@@ -24,7 +24,7 @@ repositories {
   jcenter()
 }
 
-project.mainClassName = "griffio.GriffioPackage"
+project.mainClassName = "griffio.MainApplication"
 
 project.dependencies {
 
@@ -32,8 +32,8 @@ project.dependencies {
   ext.guava_version = "18.0"
   ext.jpa_version = "2.1.0"
   ext.junit_version = "4.12"
-  ext.kotlin_version = "0.12.200"
-  ext.querydsl_version = "4.0.1"
+  ext.kotlin_version = "1.0.0-beta-1038"
+  ext.querydsl_version = "4.0.6"
   ext.truth_version = "0.27"
 
   compile(
@@ -46,6 +46,7 @@ project.dependencies {
 
   kapt(
       "com.querydsl:querydsl-apt:${querydsl_version}:jpa",
+      "org.eclipse.persistence:javax.persistence:${jpa_version}",
       "com.google.dagger:dagger-compiler:${dagger_version}")
 
   testCompile(

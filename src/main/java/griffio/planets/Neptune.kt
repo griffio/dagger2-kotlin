@@ -9,5 +9,4 @@ public class Neptune : Planet {
     public override fun au() : Double {
         return 30.1
     }
-
 }

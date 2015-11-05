@@ -11,25 +11,25 @@ import griffio.planets.Uranus
 import javax.inject.Named
 import javax.inject.Singleton
 
-Module
+@Module
 public class OuterPlanetsModule {
 
-    Provides Singleton Named("Jupiter")
+    @Provides @Singleton @Named("Jupiter")
     fun fifth() : Planet {
         return Jupiter()
     }
 
-    Provides Singleton Named("Saturn")
+    @Provides @Singleton @Named("Saturn")
     fun sixth() : Planet {
         return Saturn()
     }
 
-    Provides Singleton Named("Uranus")
+    @Provides @Singleton @Named("Uranus")
     fun seventh() : Planet {
         return Uranus()
     }
 
-    Provides Singleton Named("Neptune")
+    @Provides @Singleton @Named("Neptune")
     fun eighth() : Planet {
         return Neptune()
     }
