@@ -1,6 +1,5 @@
-
 buildscript {
-  ext.kotlin_version = '1.0.0-beta-1038'
+  ext.kotlin_version = '1.0.0-beta-2423'
   repositories {
     jcenter()
   }
@@ -32,7 +31,7 @@ project.dependencies {
   ext.guava_version = "18.0"
   ext.jpa_version = "2.1.0"
   ext.junit_version = "4.12"
-  ext.kotlin_version = "1.0.0-beta-1038"
+  ext.kotlin_version = "1.0.0-beta-2423"
   ext.querydsl_version = "4.0.6"
   ext.truth_version = "0.27"
 
