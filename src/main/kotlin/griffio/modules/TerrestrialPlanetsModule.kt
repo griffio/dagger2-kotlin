@@ -2,13 +2,8 @@ package griffio.modules
 
 import dagger.Module
 import dagger.Provides
-import griffio.planets.Earth
-import griffio.planets.Mars
-import griffio.planets.Mercury
-import griffio.planets.Planet
-import griffio.planets.Venus
+import griffio.planets.*
 import javax.inject.Named
-
 import javax.inject.Singleton
 
 @Module

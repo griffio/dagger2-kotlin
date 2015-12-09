@@ -1,7 +1,6 @@
 package griffio.solarsystem;
 
 import com.querydsl.collections.CollQueryFactory;
-import com.querydsl.core.types.Predicate;
 import griffio.components.SolarSystem;
 import griffio.components.DaggerSolarSystem;
 import griffio.entity.Satellite;

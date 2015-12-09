@@ -1,9 +1,9 @@
-package griffio;
+package griffio
 
 import griffio.entity.Satellite
 import griffio.solarsystem.BaseApplication
 
-public class MainApplication : BaseApplication() {
+public class MainApplication:BaseApplication () {
 
     companion object {
 

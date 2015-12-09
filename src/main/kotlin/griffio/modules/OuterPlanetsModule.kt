@@ -2,12 +2,7 @@ package griffio.modules;
 
 import dagger.Module
 import dagger.Provides
-import griffio.planets.Jupiter
-import griffio.planets.Neptune
-import griffio.planets.Planet
-import griffio.planets.Saturn
-import griffio.planets.Uranus
-
+import griffio.planets.*
 import javax.inject.Named
 import javax.inject.Singleton
 

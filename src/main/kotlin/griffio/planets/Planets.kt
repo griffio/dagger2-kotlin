@@ -1,10 +1,5 @@
 package griffio.planets;
 
-import com.google.common.collect.ComparisonChain;
-
-import java.util.Comparator;
-import java.util.Objects;
-
 public class Planets {
 //    @Override
 //    public int compare(Planet a, Planet b) {
