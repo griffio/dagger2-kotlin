@@ -9,6 +9,7 @@ buildscript {
 
 plugins {
   id 'java'
+  id 'idea'
   id 'application'
   id "com.github.johnrengelman.shadow" version "1.2.1"
 }
@@ -19,13 +20,13 @@ project.ext.sourceCompatibility = "1.8"
 project.ext.targetCompatibility = "1.8"
 
 repositories {
-  jcenter()
+  mavenCentral()
 }
 project.mainClassName = "griffio.MainApplication"
 
 project.dependencies {
 
-  ext.dagger_version = "2.2"
+  ext.dagger_version = "2.4"
   ext.guava_version = "18.0"
   ext.jpa_version = "2.1.0"
   ext.junit_version = "4.12"
@@ -33,24 +34,28 @@ project.dependencies {
   ext.truth_version = "0.27"
 
   compile(
-      "com.google.dagger:dagger:${dagger_version}",
-      "com.querydsl:querydsl-collections:${querydsl_version}",
-      "com.querydsl:querydsl-jpa:${querydsl_version}",
-      "org.eclipse.persistence:javax.persistence:${jpa_version}",
-      "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
-      "com.google.guava:guava:${guava_version}")
+          "com.google.dagger:dagger:${dagger_version}",
+          "com.querydsl:querydsl-collections:${querydsl_version}",
+          "com.querydsl:querydsl-jpa:${querydsl_version}",
+          "org.eclipse.persistence:javax.persistence:${jpa_version}",
+          "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+          "com.google.guava:guava:${guava_version}")
 
   kapt(
-      "com.querydsl:querydsl-apt:${querydsl_version}:jpa",
-      "org.eclipse.persistence:javax.persistence:${jpa_version}",
-      "com.google.dagger:dagger-compiler:${dagger_version}")
+          "com.querydsl:querydsl-apt:${querydsl_version}:jpa",
+          "org.eclipse.persistence:javax.persistence:${jpa_version}",
+          "com.google.dagger:dagger-compiler:${dagger_version}")
 
   testCompile(
-      "junit:junit:${junit_version}",
-      "com.google.truth:truth:${truth_version}"
+          "junit:junit:${junit_version}",
+          "com.google.truth:truth:${truth_version}"
   )
-
 }
+
+sourceSets {
+  main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
+}
+
 
 kapt {
   generateStubs = false
