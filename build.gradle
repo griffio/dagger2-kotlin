@@ -1,20 +1,9 @@
-buildscript {
-  repositories {
-    mavenCentral()
-  }
-  dependencies {
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
-  }
-}
-
 plugins {
   id 'java'
-  id 'idea'
   id 'application'
-  id "com.github.johnrengelman.shadow" version "1.2.1"
+  id 'nebula.kotlin' version '1.0.3'
+  id "com.github.johnrengelman.shadow" version "1.2.3"
 }
-
-apply plugin: 'kotlin'
 
 project.ext.sourceCompatibility = "1.8"
 project.ext.targetCompatibility = "1.8"
@@ -26,7 +15,7 @@ project.mainClassName = "griffio.MainApplication"
 
 project.dependencies {
 
-  ext.dagger_version = "2.5"
+  ext.dagger_version = "2.6"
   ext.guava_version = "19.0"
   ext.jpa_version = "2.1.0"
   ext.junit_version = "4.12"
