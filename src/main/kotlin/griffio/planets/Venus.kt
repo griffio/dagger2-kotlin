@@ -1,6 +1,6 @@
 package griffio.planets
 
-public final class Venus : Planet {
+class Venus : Planet {
 
     override fun names(): String {
         return "Venus, Sister Planet"

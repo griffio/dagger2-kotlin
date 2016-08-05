@@ -1,6 +1,6 @@
 package griffio.planets
 
-public interface Planet {
+interface Planet {
 
     fun names(): String
 

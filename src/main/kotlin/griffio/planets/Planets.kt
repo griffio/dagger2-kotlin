@@ -1,6 +1,6 @@
 package griffio.planets;
 
-public class Planets {
+class Planets {
 //    @Override
 //    public int compare(Planet a, Planet b) {
 //        return ComparisonChain.start().compare(a.au(), b.au()).result();

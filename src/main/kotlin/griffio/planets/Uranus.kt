@@ -1,6 +1,6 @@
 package griffio.planets
 
-public class Uranus : Planet {
+class Uranus : Planet {
 
     override fun names(): String {
         return "Uranus, Ouranos, Georgium Sidus"

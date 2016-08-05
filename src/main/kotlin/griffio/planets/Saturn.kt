@@ -1,6 +1,6 @@
 package griffio.planets
 
-public class Saturn : Planet {
+class Saturn : Planet {
 
     override fun names() : String {
         return "Saturn, Cronus, Shabbathai, Zuhal"

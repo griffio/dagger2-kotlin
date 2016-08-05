@@ -3,11 +3,11 @@ package griffio
 import griffio.entity.Satellite
 import griffio.solarsystem.BaseApplication
 
-public class MainApplication:BaseApplication () {
+class MainApplication:BaseApplication () {
 
     companion object {
 
-        @JvmStatic public fun main(args: Array<String>) {
+        @JvmStatic fun main(args: Array<String>) {
 
             val main = MainApplication()
             val solarSystem = main.solarSystem()

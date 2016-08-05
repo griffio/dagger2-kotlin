@@ -1,4 +1,4 @@
-package griffio.modules;
+package griffio.modules
 
 import dagger.Module
 import dagger.Provides
@@ -6,8 +6,7 @@ import griffio.planets.*
 import javax.inject.Named
 import javax.inject.Singleton
 
-@Module
-public class OuterPlanetsModule {
+@Module class OuterPlanetsModule {
 
     @Provides @Singleton @Named("Jupiter")
     fun fifth() : Planet {
