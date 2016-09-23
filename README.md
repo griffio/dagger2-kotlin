@@ -16,8 +16,8 @@ This example uses kapt generated stubs.
 "bootstrap" Java code is required to reference generated sources, unless ```generateStubs = true``` is enabled.
 Generating stubs allows "generated" sources to be referenced from Kotlin as the compiler will not be able to reference the missing sources.
 
-Generated source is located in "build/generated/source/kapt/main"
-As this is under build, normally excluded from project sources, this source root will be marked automatically by the Kotlin "kapt" Gradle plugin.
+Generated source is located in "build/generated/source/kapt/main",
+as this is under build, normally excluded from project sources, this source root will be marked automatically by the Kotlin "kapt" Gradle plugin.
 
 ~~~
 kapt {
