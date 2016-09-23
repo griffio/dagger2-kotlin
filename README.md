@@ -1,9 +1,11 @@
-dagger2-example with Kotlin (1.0.3) annotation processor support Gradle build
+dagger2-example with Kotlin (1.0.4) annotation processor support Gradle build
 =================================
 
 [kapt-annotation-processing-for-kotlin](http://blog.jetbrains.com/kotlin/2015/05/kapt-annotation-processing-for-kotlin)
 
 [better-annotation-processing-supporting-stubs-in-kapt](http://blog.jetbrains.com/kotlin/2015/06/better-annotation-processing-supporting-stubs-in-kapt)
+
+[Implement Annotation Processing API (JSR 269) natively in Kotlin](https://youtrack.jetbrains.com/issue/KT-13499)
 
 Kotlin and Java exists side by side. The Dagger generated code must be configured in Java.
 
