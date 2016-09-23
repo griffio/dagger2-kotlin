@@ -13,7 +13,7 @@ Notes:-
 
 This example uses kapt generated stubs. Unless ```generateStubs = true``` is enabled, "bootstrap" Java code is required to reference generated sources.
 
-~~~
+~~~ groovy
 kapt {
   generateStubs = true
 }
@@ -23,7 +23,7 @@ Generating stubs, compiler generated intermediate classes, allows "generated" so
 
 Generated source is created in "build/generated/source/kapt/main", as this is under "build", normally excluded from IntelliJ's project sources, this source root will be marked in the build script itself.
 
-~~~
+~~~ groovy
 sourceSets {
   main.java.srcDirs += [file("$buildDir/generated/source/kapt2/main")]
 }
@@ -37,7 +37,7 @@ sourceSets {
 
 Shows Planets being injected via constructor by qualifier
 
-~~~
+~~~ kotlin
 public class TerrestrialPlanets @Inject (@Named("Mercury") val mercury: Planet,
                                          @Named("Venus") val venus: Planet,
                                          @Named("Earth") val earth: Planet,
@@ -47,7 +47,7 @@ public class TerrestrialPlanets @Inject (@Named("Mercury") val mercury: Planet,
 
 The TerrestrialPlanetsModule, for example, provides a singleton named "Mercury" etc.
 
-~~~
+~~~ kotlin
 @Module
 public class TerrestrialPlanetsModule {
 
