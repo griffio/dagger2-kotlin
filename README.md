@@ -7,18 +7,23 @@ dagger2-example with Kotlin (1.0.4) annotation processor support Gradle build
 
 [Implement Annotation Processing API (JSR 269) natively in Kotlin](https://youtrack.jetbrains.com/issue/KT-13499)
 
-Kotlin and Java exists side by side. The Dagger generated code must be configured in Java.
-
-~~~java
- public SolarSystem solarSystem() {
-    return DaggerSolarSystem.builder()
-        .terrestrialPlanetsModule(new TerrestrialPlanetsModule())
-        .outerPlanetsModule(new OuterPlanetsModule())
-        .build();
-  }
-~~~
-
 [Dagger2 site ](http://google.github.io/dagger/)
+
+Notes:-
+
+This example uses kapt generated stubs.
+
+"bootstrap" Java code is required to reference generated sources, unless ```generateStubs = true``` is enabled.
+Generating stubs allows "generated" sources to be referenced from Kotlin as the compiler will not be able to reference the missing sources.
+
+Generated source is located in "build/generated/source/kapt/main"
+As this is under build, normally excluded from project sources, this source root will be marked automatically by the Kotlin "kapt" Gradle plugin.
+
+~~~
+kapt {
+  generateStubs = true
+}
+~~~
 
 ---
 

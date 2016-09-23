@@ -41,6 +41,10 @@ project.dependencies {
   )
 }
 
+kapt {
+  generateStubs = true
+}
+
 sourceSets {
   main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
 }
