@@ -11,7 +11,7 @@ import griffio.entity.QSatellite;
 import java.util.List;
 
 /***
- * BaseApplication would only be need when not generating kapt stubs
+ * BaseApplication would only be needed when not generating kapt stubs
  */
 public abstract class BaseApplication {
 
