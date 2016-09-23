@@ -11,17 +11,21 @@ dagger2-example with Kotlin (1.0.4) annotation processor support Gradle build
 
 Notes:-
 
-This example uses kapt generated stubs.
-
-"bootstrap" Java code is required to reference generated sources, unless ```generateStubs = true``` is enabled.
-Generating stubs allows "generated" sources to be referenced from Kotlin as the compiler will not be able to reference the missing sources.
-
-Generated source is located in "build/generated/source/kapt/main",
-as this is under build, normally excluded from project sources, this source root will be marked automatically by the Kotlin "kapt" Gradle plugin.
+This example uses kapt generated stubs. Unless ```generateStubs = true``` is enabled, "bootstrap" Java code is required to reference generated sources.
 
 ~~~
 kapt {
   generateStubs = true
+}
+~~~
+
+Generating stubs, compiler generated intermediate classes, allows "generated" sources to be referenced from Kotlin otherwise the compiler will not be able to reference the missing sources.
+
+Generated source is created in "build/generated/source/kapt/main", as this is under "build", normally excluded from IntelliJ's project sources, this source root will be marked in the build script itself.
+
+~~~
+sourceSets {
+  main.java.srcDirs += [file("$buildDir/generated/source/kapt2/main")]
 }
 ~~~
 
