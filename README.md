@@ -25,7 +25,7 @@ Generated source is created in "build/generated/source/kapt/main", as this is un
 
 ~~~ groovy
 sourceSets {
-  main.java.srcDirs += [file("$buildDir/generated/source/kapt2/main")]
+  main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
 }
 ~~~
 
