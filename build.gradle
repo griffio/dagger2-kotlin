@@ -28,16 +28,18 @@ project.dependencies {
           "com.querydsl:querydsl-jpa:${querydsl_version}",
           "org.eclipse.persistence:javax.persistence:${jpa_version}",
           "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
-          "com.google.guava:guava:${guava_version}")
+          "com.google.guava:guava:${guava_version}"
+  )
 
   kapt(
           "com.querydsl:querydsl-apt:${querydsl_version}:jpa",
           "org.eclipse.persistence:javax.persistence:${jpa_version}",
-          "com.google.dagger:dagger-compiler:${dagger_version}")
+          "com.google.dagger:dagger-compiler:${dagger_version}"
+  )
 
   testCompile(
           "junit:junit:${junit_version}",
-          "com.google.truth:truth:${truth_version}"
+          "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
   )
 }
 
