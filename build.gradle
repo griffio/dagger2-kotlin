@@ -1,9 +1,23 @@
+buildscript {
+  ext.kotlin_version = '1.0.6'
+
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  }
+}
+
 plugins {
-  id 'java'
-  id 'application'
-  id "com.zoltu.kotlin" version "1.0.5"
+  id "java"
+  id "application"
   id "com.github.johnrengelman.shadow" version "1.2.3"
 }
+
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt' //kapt3 remove this plugin for previous version
 
 project.ext.sourceCompatibility = "1.8"
 project.ext.targetCompatibility = "1.8"
@@ -16,11 +30,11 @@ project.mainClassName = "griffio.MainApplication"
 project.dependencies {
 
   ext.dagger_version = "2.8"
-  ext.guava_version = "19.0"
+  ext.guava_version = "20.0"
   ext.jpa_version = "2.1.0"
   ext.junit_version = "4.12"
   ext.querydsl_version = "4.1.3"
-  ext.truth_version = "0.28"
+  ext.truth_version = "0.30"
 
   compile(
           "com.google.dagger:dagger:${dagger_version}",
@@ -44,7 +58,8 @@ project.dependencies {
 }
 
 kapt {
-  generateStubs = true
+  // stubs are not needed in kapt3
+  //generateStubs = true
 }
 
 sourceSets {

@@ -1,4 +1,4 @@
-dagger2-example with Kotlin (1.0.5) annotation processor support Gradle build
+dagger2-example with Kotlin (1.0.6) annotation processor support Gradle build
 =================================
 
 [kapt-annotation-processing-for-kotlin](http://blog.jetbrains.com/kotlin/2015/05/kapt-annotation-processing-for-kotlin)
@@ -7,11 +7,18 @@ dagger2-example with Kotlin (1.0.5) annotation processor support Gradle build
 
 [Implement Annotation Processing API (JSR 269) natively in Kotlin](https://youtrack.jetbrains.com/issue/KT-13499)
 
+[Use javac annotation processing implementation, generate AST stubs for Kotlin classes](https://youtrack.jetbrains.com/issue/KT-14937#tab=Linked%20Issues)
+
 [Dagger2 site ](http://google.github.io/dagger/)
 
 Notes:-
 
-This example uses kapt generated stubs. Unless ```generateStubs = true``` is enabled, "bootstrap" Java code is required to reference generated sources.
+To enable experimental kapt, just add the following line to your build.gradle:
+```apply plugin: 'kotlin-kapt'```
+
+This example uses experimental kapt3 annotation processor plugin, does not require stubs.
+ 
+Previous version, unless ```generateStubs = true``` is enabled, "bootstrap" Java code is required to reference generated sources.
 
 ~~~ groovy
 kapt {
