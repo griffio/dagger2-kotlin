@@ -22,6 +22,7 @@ Previous version, unless ```generateStubs = true``` is enabled, "bootstrap" Java
 
 In Kotlin 1.1, you may see some warnings emitted by the Kotlin compiler, https://github.com/JetBrains/kotlin/blob/master/compiler/cli/src/org/jetbrains/kotlin/cli/jvm/K2JVMCompiler.kt#L151
 these seem related to https://youtrack.jetbrains.com/issue/KT-1643
+and is fixed https://youtrack.jetbrains.com/issue/KT-14619
 ```
 : The '-d' option with a directory destination is ignored because '-module' is specified
 w: [kapt] Sources output directory is not specified, skipping annotation processing
