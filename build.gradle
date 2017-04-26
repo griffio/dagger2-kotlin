@@ -1,11 +1,10 @@
 plugins {
   id "java"
   id "application"
-  id "com.zoltu.kotlin" version "1.1.0"
+  id "org.jetbrains.kotlin.jvm" version "1.1.2-test-2"
+  id "org.jetbrains.kotlin.kapt" version "1.1.2-test-2"
   id "com.github.johnrengelman.shadow" version "1.2.3"
 }
-
-apply plugin: 'kotlin-kapt' //applies kapt3 - remove this for previous version
 
 project.ext.sourceCompatibility = "1.8"
 project.ext.targetCompatibility = "1.8"

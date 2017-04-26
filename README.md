@@ -1,4 +1,4 @@
-dagger2-example with Kotlin (1.1.0) annotation processor support Gradle build
+dagger2-example with Kotlin (1.1.2) annotation processor support Gradle build
 =================================
 
 [kapt-annotation-processing-for-kotlin](http://blog.jetbrains.com/kotlin/2015/05/kapt-annotation-processing-for-kotlin)
@@ -13,6 +13,8 @@ dagger2-example with Kotlin (1.1.0) annotation processor support Gradle build
 
 Notes:-
 
+testing "org.jetbrains.kotlin.kapt" plugins
+
 To enable experimental kapt, just add the following line to your build.gradle:
 ```apply plugin: 'kotlin-kapt'```
 
@@ -20,7 +22,7 @@ This example uses experimental kapt3 annotation processor plugin, does not requi
  
 Previous version, unless ```generateStubs = true``` is enabled, "bootstrap" Java code is required to reference generated sources.
 
-In Kotlin 1.1, you may see some warnings emitted by the Kotlin compiler, https://github.com/JetBrains/kotlin/blob/master/compiler/cli/src/org/jetbrains/kotlin/cli/jvm/K2JVMCompiler.kt#L151
+In Kotlin 1.1.x, you may see some warnings emitted by the Kotlin compiler, https://github.com/JetBrains/kotlin/blob/master/compiler/cli/src/org/jetbrains/kotlin/cli/jvm/K2JVMCompiler.kt#L151
 these seem related to https://youtrack.jetbrains.com/issue/KT-1643
 and is fixed https://youtrack.jetbrains.com/issue/KT-14619
 ```
