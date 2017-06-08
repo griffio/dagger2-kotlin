@@ -7,6 +7,7 @@ import griffio.entity.QSatellite
 import griffio.entity.Satellite
 import griffio.modules.OuterPlanetsModule
 import griffio.modules.TerrestrialPlanetsModule
+import griffio.planets.SomePlanetsEnum
 
 class MainApplication() {
 
@@ -32,6 +33,7 @@ class MainApplication() {
       val solarSystem = main.solarSystem()
       println(solarSystem.terrestrial())
       println(solarSystem.outer())
+      println(solarSystem.planets().map[SomePlanetsEnum.EARTH])
 
       val someMoons = arrayListOf(Satellite(1L, "Callisto", 4800.0), Satellite(2L, "Luna", 3476.0))
       val moon = main.findSatellite(someMoons)
