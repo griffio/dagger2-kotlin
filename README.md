@@ -1,4 +1,4 @@
-dagger2-example with Kotlin (1.1.3) annotation processor support Gradle build
+dagger2-example with Kotlin (1.1.3-2) annotation processor support Gradle build
 =================================
 
 [kapt-annotation-processing-for-kotlin](http://blog.jetbrains.com/kotlin/2015/05/kapt-annotation-processing-for-kotlin)
@@ -18,7 +18,9 @@ testing "org.jetbrains.kotlin.kapt" plugins
 To enable experimental kapt, just add the following line to your build.gradle:
 ```apply plugin: 'kotlin-kapt'```
 
-This example uses experimental kapt3 annotation processor plugin, does not require stubs.
+This example uses kapt3 annotation processor plugin, does not require stubs.
+
+Use Kapt3  support for incremental compilation of Java stubs
  
 Previous version, unless ```generateStubs = true``` is enabled, "bootstrap" Java code is required to reference generated sources.
 
