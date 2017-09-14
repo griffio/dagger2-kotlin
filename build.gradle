@@ -17,7 +17,7 @@ project.mainClassName = "griffio.MainApplication"
 
 project.dependencies {
 
-  ext.dagger_version = "2.8"
+  ext.dagger_version = "2.11"
   ext.guava_version = "20.0"
   ext.jpa_version = "2.1.0"
   ext.junit_version = "4.12"
