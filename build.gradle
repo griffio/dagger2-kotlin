@@ -1,59 +1,59 @@
 plugins {
-  id "java"
-  id "application"
-  id "org.jetbrains.kotlin.jvm" version "1.1.4"
-  id "org.jetbrains.kotlin.kapt" version "1.1.4"
-  id "com.github.johnrengelman.shadow" version "1.2.3"
+    id "java"
+    id "application"
+    id "org.jetbrains.kotlin.jvm" version "1.1.50"
+    id "org.jetbrains.kotlin.kapt" version "1.1.50"
+    id "com.github.johnrengelman.shadow" version "1.2.3"
 }
 
 project.ext.sourceCompatibility = "1.8"
 project.ext.targetCompatibility = "1.8"
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 project.mainClassName = "griffio.MainApplication"
 
 project.dependencies {
 
-  ext.dagger_version = "2.11"
-  ext.guava_version = "20.0"
-  ext.jpa_version = "2.1.0"
-  ext.junit_version = "4.12"
-  ext.querydsl_version = "4.1.3"
-  ext.truth_version = "0.30"
+    ext.dagger_version = "2.11"
+    ext.guava_version = "20.0"
+    ext.jpa_version = "2.1.0"
+    ext.junit_version = "4.12"
+    ext.querydsl_version = "4.1.3"
+    ext.truth_version = "0.30"
 
-  compile(
-          "com.google.dagger:dagger:${dagger_version}",
-          "com.querydsl:querydsl-collections:${querydsl_version}",
-          "com.querydsl:querydsl-jpa:${querydsl_version}",
-          "org.eclipse.persistence:javax.persistence:${jpa_version}",
-          "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
-          "com.google.guava:guava:${guava_version}"
-  )
+    compile(
+            "com.google.dagger:dagger:${dagger_version}",
+            "com.querydsl:querydsl-collections:${querydsl_version}",
+            "com.querydsl:querydsl-jpa:${querydsl_version}",
+            "org.eclipse.persistence:javax.persistence:${jpa_version}",
+            "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+            "com.google.guava:guava:${guava_version}"
+    )
 
-  kapt(
-          "com.querydsl:querydsl-apt:${querydsl_version}:jpa",
-          "org.eclipse.persistence:javax.persistence:${jpa_version}",
-          "com.google.dagger:dagger-compiler:${dagger_version}"
-  )
+    kapt(
+            "com.querydsl:querydsl-apt:${querydsl_version}:jpa",
+            "org.eclipse.persistence:javax.persistence:${jpa_version}",
+            "com.google.dagger:dagger-compiler:${dagger_version}"
+    )
 
-  testCompile(
-          "junit:junit:${junit_version}",
-          "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
-  )
+    testCompile(
+            "junit:junit:${junit_version}",
+            "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
+    )
 }
 
 kapt {
-  // stubs are not needed in kapt3
-  // generateStubs = true
+    // stubs are not needed in kapt3
+    // generateStubs = true
 }
 
 sourceSets {
-  main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
+    main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '3.2.1'
+    gradleVersion = '4.2'
 }
