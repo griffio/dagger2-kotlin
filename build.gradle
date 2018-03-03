@@ -1,8 +1,8 @@
 plugins {
     id "java"
     id "application"
-    id "org.jetbrains.kotlin.jvm" version "1.2.20"
-    id "org.jetbrains.kotlin.kapt" version "1.2.20"
+    id "org.jetbrains.kotlin.jvm" version "1.2.30"
+    id "org.jetbrains.kotlin.kapt" version "1.2.30"
     id "com.github.johnrengelman.shadow" version "1.2.3"
 }
 
@@ -48,6 +48,7 @@ project.dependencies {
 kapt {
     // stubs are not needed in kapt3
     // generateStubs = true
+    mapDiagnosticLocations = true // 1.2.30 include the Kotlin files into error reports
 }
 
 sourceSets {
