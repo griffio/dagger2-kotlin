@@ -10,7 +10,7 @@ import griffio.planets.TerrestrialPlanets
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = arrayOf(TerrestrialPlanetsModule::class, OuterPlanetsModule::class, SomePlanetsModule::class)) interface SolarSystem {
+@Component(modules = [(TerrestrialPlanetsModule::class), (OuterPlanetsModule::class), (SomePlanetsModule::class)]) interface SolarSystem {
     fun terrestrial() : TerrestrialPlanets
     fun outer() : OuterPlanets
     fun planets(): PlanetsMap
