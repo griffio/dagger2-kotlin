@@ -1,8 +1,8 @@
 plugins {
     id "java"
     id "application"
-    id "org.jetbrains.kotlin.jvm" version "1.2.60"
-    id "org.jetbrains.kotlin.kapt" version "1.2.60"
+    id "org.jetbrains.kotlin.jvm" version "1.2.70"
+    id "org.jetbrains.kotlin.kapt" version "1.2.70"
     id "com.github.johnrengelman.shadow" version "1.2.3"
 }
 
