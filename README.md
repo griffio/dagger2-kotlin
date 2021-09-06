@@ -1,4 +1,4 @@
-dagger2-example with Kotlin (1.5.x) annotation processor support Gradle build
+dagger2-example with Kotlin (1.5.x) kapt annotation processor supported Gradle build
 =================================
 
 [kapt documentation](https://kotlinlang.org/docs/reference/kapt.html)
@@ -14,43 +14,6 @@ dagger2-example with Kotlin (1.5.x) annotation processor support Gradle build
 [Dagger2 site ](http://google.github.io/dagger/)
 
 Notes:-
-
-testing "org.jetbrains.kotlin.kapt" plugins
-
-To enable experimental kapt, just add the following line to your build.gradle:
-```apply plugin: 'kotlin-kapt'```
-
-This example uses kapt3 annotation processor plugin, does not require stubs.
-
-Use Kapt3  support for incremental compilation of Java stubs
- 
-Previous version, unless ```generateStubs = true``` is enabled, "bootstrap" Java code is required to reference generated sources.
-
-In Kotlin 1.1.x, you may see some warnings emitted by the Kotlin compiler, https://github.com/JetBrains/kotlin/blob/master/compiler/cli/src/org/jetbrains/kotlin/cli/jvm/K2JVMCompiler.kt#L151
-these seem related to https://youtrack.jetbrains.com/issue/KT-1643
-and is fixed https://youtrack.jetbrains.com/issue/KT-14619
-```
-: The '-d' option with a directory destination is ignored because '-module' is specified
-w: [kapt] Sources output directory is not specified, skipping annotation processing
-```
-
-~~~ groovy
-kapt {
-  generateStubs = true
-}
-~~~
-
-Stubs, compiler generated intermediate classes, allows "generated" sources to be referenced from Kotlin otherwise the compiler will not be able to reference the missing sources.
-
-Generated source is created in "build/generated/source/kapt/main", as this is under "build", normally excluded from IntelliJ's project sources, this source root will be marked in the build script itself.
-
-~~~ groovy
-sourceSets {
-  main.java.srcDirs += [file("$buildDir/generated/source/kapt/main")]
-}
-~~~
-
----
 
 * @Component
   * @Module
@@ -107,4 +70,8 @@ public class TerrestrialPlanetsModule {
 
 ~~~
 ./gradlew run
+~~~
+
+~~~
+./gradlew test
 ~~~
