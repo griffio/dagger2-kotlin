@@ -1,7 +1,5 @@
-dagger2-example with Kotlin (1.3.x) annotation processor support Gradle build
+dagger2-example with Kotlin (1.5.x) annotation processor support Gradle build
 =================================
-
-Java 8 supported in Kapt
 
 [kapt documentation](https://kotlinlang.org/docs/reference/kapt.html)
 
