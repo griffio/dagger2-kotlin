@@ -9,7 +9,7 @@ import griffio.modules.OuterPlanetsModule
 import griffio.modules.TerrestrialPlanetsModule
 import griffio.planets.SomePlanetsEnum
 
-class MainApplication() {
+class MainApplication {
 
   fun solarSystem(): SolarSystem {
     return DaggerSolarSystem.builder()
