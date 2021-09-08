@@ -13,6 +13,14 @@ application {
     mainClass.set("griffio.MainApplication")
 }
 
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>() {
+    kotlinOptions.jvmTarget = "14"
+}
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(14))
+}
+
 dependencies {
 
     val daggerVersion = "2.38.1"
@@ -25,6 +33,7 @@ dependencies {
     implementation("com.google.dagger:dagger:${daggerVersion}")
 
     kapt("com.querydsl:querydsl-apt:${querydslVersion}:jpa")
+    kapt("com.querydsl:querydsl-kotlin-codegen:${querydslVersion}")
     kapt("com.google.dagger:dagger-compiler:${daggerVersion}")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.21")
