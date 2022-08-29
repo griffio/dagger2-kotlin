@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.5.30"
-    kotlin("kapt") version "1.5.30"
+    kotlin("jvm") version "1.7.10"
+    kotlin("kapt") version "1.7.10"
     application
 }
 
@@ -23,7 +23,7 @@ java {
 
 dependencies {
 
-    val daggerVersion = "2.38.1"
+    val daggerVersion = "2.43.2"
     val jpaVersion = "2.2.1"
     val querydslVersion = "5.0.0"
 
@@ -36,7 +36,7 @@ dependencies {
     kapt("com.querydsl:querydsl-kotlin-codegen:${querydslVersion}")
     kapt("com.google.dagger:dagger-compiler:${daggerVersion}")
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.21")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.10")
 
 }
 
