@@ -15,6 +15,6 @@ class SolarSystemTests {
         .outerPlanetsModule(OuterPlanetsModule())
         .build()
 
-    assert(solarSystem.terrestrial().earth.au() == 1.0)
+    assert(solarSystem.terrestrial().earth.au() == "1.0".toBigDecimal())
   }
 }

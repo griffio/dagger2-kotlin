@@ -8,7 +8,6 @@ import griffio.entity.Satellite
 import griffio.modules.OuterPlanetsModule
 import griffio.modules.TerrestrialPlanetsModule
 import griffio.planets.SomePlanetsEnum
-import java.math.BigDecimal
 
 class MainApplication {
 
@@ -22,7 +21,7 @@ class MainApplication {
     fun findSatellite(satellites: List<Satellite>): Satellite {
         return CollQueryFactory
             .from(QSatellite.satellite, satellites)
-            .where(QSatellite.satellite.diameter.between(3000.0, 4000.0))
+            .where(QSatellite.satellite.diameter.between("3000".toBigDecimal(), "4000.0".toBigDecimal()))
             .fetchFirst()
     }
 
@@ -37,7 +36,8 @@ class MainApplication {
             println(solarSystem.outer())
             println(solarSystem.planets().map[SomePlanetsEnum.EARTH])
 
-            val someMoons = arrayListOf(Satellite(1L, "Callisto", BigDecimal("4800.0")), Satellite(2L, "Luna",BigDecimal("3476.0")))
+
+            val someMoons = arrayListOf(Satellite(1L, "Callisto", "4800.0".toBigDecimal()), Satellite(2L, "Luna", "3476.0".toBigDecimal()))
             val moon = main.findSatellite(someMoons)
             println(moon)
         }
