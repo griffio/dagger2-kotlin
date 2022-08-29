@@ -1,4 +1,4 @@
-dagger2-example with Kotlin (1.5.x) kapt annotation processor supported Gradle build
+dagger2-example with Kotlin (1.7.x) kapt annotation processor supported Gradle build
 =================================
 
 [kapt documentation](https://kotlinlang.org/docs/reference/kapt.html)
